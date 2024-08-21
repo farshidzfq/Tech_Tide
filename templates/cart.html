@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Cart</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <h1>Your Cart</h1>
+    <ul>
+        {% for product in products %}
+        <li>{{ product.name }} - ${{ product.price }}</li>
+        {% endfor %}
+    </ul>
+    <a href="{{ url_for('checkout') }}">Checkout</a>
+    <a href="{{ url_for('index') }}">Back to Products</a>
+</body>
+</html>
